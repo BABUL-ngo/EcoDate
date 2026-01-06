@@ -101,7 +101,7 @@ function Game() {
           value={userInput}
           disabled={!inputEnabled}
           onChange={(e) => setUserInput(e.target.value)}
-          placeholder="👉 Type your action..."
+          placeholder="..."
         />
         <button
           className="submit-button"
