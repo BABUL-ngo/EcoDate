@@ -2,7 +2,7 @@
   text-align: center;
   padding: 40px;
   color: white;
-  max-width: 500px;
+  max-width: 800px;
   margin: auto;
 
   background: radial-gradient(
@@ -46,4 +46,12 @@
 
 .landing-content button:hover {
   background-color: #45a049;
+}
+
+.text::placeholder{
+  color: rgb(0, 0, 0);
+}
+
+.condition{
+  margin-top: 5px;
 }

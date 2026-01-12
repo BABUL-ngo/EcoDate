@@ -2,6 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { stages } from "../data/gameData";
 import "../styles/Game.css";
+import beach1 from "../assets/beach-day1.jpg";
+import beach2 from "../assets/beach-day2.jpg";
+import beach3 from "../assets/beach-day3.jpg";
+import beach4 from "../assets/beach-day4.jpg";
+
+
+const backgrounds = {
+  1: beach1,
+  2: beach2,
+  3: beach3,
+  4: beach4,
+};
 
 function Game() {
   const navigate = useNavigate();
@@ -95,7 +107,15 @@ function Game() {
   };
 
   return (
-    <div className="game-container">
+<div
+  className="game-container"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+      url(${backgrounds[stage.id]})
+    `
+  }}
+>
       {/* Story Panel */}
       <div className="story-panel" ref={storyPanelRef}>
         <pre className="story-text">{display}</pre>

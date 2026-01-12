@@ -1,68 +1,83 @@
+/* ------------------ Global ------------------ */
 * {
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   background: #000;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
+/* ------------------ Game Container ------------------ */
 .game-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: #000;
-  color: #e5e5e5;
-  margin-left: 20%;
+  width: 100vw;                 /* full screen width */
+  height: 100vh;                /* full screen height */
+  color: #ffffff;
+
+  /* BACKGROUND IMAGE + GRADIENT OVERLAY */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url("../assets/game-bg.jpg"); /* default image */
+  background-size: cover;        /* cover entire screen */
+  background-position: center;   /* center image */
+  background-repeat: no-repeat;
+  transition: background-image 0.8s ease-in-out; /* smooth stage change */
+  margin: 0;
+  padding: 0;
 }
 
+/* ------------------ Story Panel ------------------ */
 .story-panel {
-  flex: 1;                  /* fill remaining vertical space */
-  overflow-y: auto;          /* allow scrolling */
+  flex: 1;                      /* fill remaining vertical space */
+  overflow-y: auto;              /* allow scrolling */
   padding: 20px 30px;
-  padding-bottom: 120px;     /* space for fixed input panel */
+  padding-bottom: 120px;         /* space for input panel */
   width: 100%;
-  background: #000;
-  scrollbar-width: thin;     /* Firefox scrollbar */
+  max-width: 900px;              /* optional: keep text readable */
+  margin: auto;                  /* center horizontally */
+  background: transparent;       /* show background image behind */
+  scroll-behavior: smooth;       /* optional smooth scrolling */
+  scrollbar-width: none;         /* hide scrollbar in Firefox */
 }
 
 /* Custom scrollbar for Chrome/Edge/Safari */
 .story-panel::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;                    /* hide scrollbar */
+  background: transparent;
 }
 
-.story-panel::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 4px;
-}
-
-.story-panel::-webkit-scrollbar-track {
-  background-color: #000;
-}
-
+/* ------------------ Story Text ------------------ */
 .story-text {
-  white-space: pre-wrap;     /* preserve line breaks */
+  white-space: pre-wrap;         /* preserve line breaks */
   line-height: 1.6;
   text-align: left;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9); /* makes text readable */
 }
 
+/* ------------------ Input Panel ------------------ */
 .input-panel {
   display: flex;
   padding: 15px;
-  background: #000;
-  border-top: 1px solid #111;
-  position: fixed;           /* always stay at bottom */
+  position: fixed;               /* always at bottom */
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+  background: rgba(0, 0, 0, 0.85); /* semi-transparent for readability */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: transparent;
 }
 
 .input-panel textarea {
   flex: 1;
-  background: #000;
+  background: rgba(0,0,0,0.75);
   border: 1px solid #222;
   color: #fff;
   padding: 12px;
@@ -70,17 +85,28 @@ body {
   resize: none;
   font-family: "JetBrains Mono", monospace;
   font-size: 14px;
+  border-radius: 6px;
+  background: transparent;
+  
 }
 
 .input-panel button {
   margin-left: 10px;
   padding: 12px 22px;
-  background: #2563eb;
-  border: none;
-  color: #fff;
+  background: transparent;
+  border: 1px;
+  color: #ffffff;
   cursor: pointer;
   font-family: "JetBrains Mono", monospace;
   font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+}
+
+.input-panel button:hover:not(:disabled) {
+  background: transparent;
+  border: #fff;
 }
 
 .input-panel button:disabled {
@@ -88,18 +114,6 @@ body {
   cursor: not-allowed;
 }
 
-/* Chrome, Edge, Safari */
-.story-panel::-webkit-scrollbar {
-  width: 0px; /* hide scrollbar */
-  background: transparent;
-}
-
-/* Firefox */
-.story-panel {
-  scrollbar-width: none; /* hide scrollbar */
-}
-
-/* Optional: smooth scrolling for nicer effect */
-.story-panel {
-  scroll-behavior: smooth;
+.input-panel textarea {
+  border: 1px solid #ffffff; /* white outline */
 }
