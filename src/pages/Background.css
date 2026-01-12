@@ -1,0 +1,24 @@
+/* REQUIRED for height: 100% to work */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Background wrapper */
+.background {
+  background-image: url("../assets/123.jpg");
+  height: 100%;
+  width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.condition {
+  font-size: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: -30px;
+  margin-top: -15px;
+}

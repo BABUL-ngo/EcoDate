@@ -1,30 +1,34 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./Background.css";
+import "../styles/Landing.css";
 
 function Landing() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
 
   const startGame = () => {
-    if (!name.trim()) return alert("Please enter your name");
+    if (!name.trim()) return alert("Enter you full name to proceed.");
     navigate("/game", { state: { name } });
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "40px" }}>
-      <h1>Welcome to Harithavaran 🌱</h1>
+    <div className="background">
+      <div className="landing-content">
+        <h1>Welcome to Harithavaran 🌱</h1>
 
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        style={{ padding: "10px", fontSize: "16px" }}
-      />
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter you full name to proceed"
+        />
+        <div className="condition">
+          <p>*this name will be used in you certificate</p>
+        </div>
+        <br /><br />
 
-      <br /><br />
-
-      <button onClick={startGame}>Start Game</button>
+        <button onClick={startGame}>Start Game</button>
+      </div>
     </div>
   );
 }
