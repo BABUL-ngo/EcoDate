@@ -10,6 +10,7 @@ function AppRoutes(){
         <Route path="/" element={<Landing/>}/>
         <Route path="/game" element={<Game/>}/>
         <Route path="/result" element={<Result/>}/>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )
