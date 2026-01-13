@@ -27,7 +27,7 @@ function Landing() {
         <input
           value={name}
           onChange={handleNameChange}
-          placeholder="Enter your full name to proceed"
+          placeholder="Enter your full name"
           className="text"
           maxLength={31} // allows warning to trigger
         />

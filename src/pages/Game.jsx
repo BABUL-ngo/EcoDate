@@ -45,7 +45,7 @@ function Game() {
 
   const stage = stages[stageIndex];
 
-  const typeText = async (lines, speed = 1) => {//50
+  const typeText = async (lines, speed = 50) => {//50
     if (typingLock.current) return;
     typingLock.current = true;
 
