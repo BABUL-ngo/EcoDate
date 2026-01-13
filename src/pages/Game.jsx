@@ -45,7 +45,7 @@ function Game() {
 
   const stage = stages[stageIndex];
 
-  const typeText = async (lines, speed = 25) => {
+  const typeText = async (lines, speed = 50) => {
     if (typingLock.current) return;
     typingLock.current = true;
 
@@ -111,6 +111,24 @@ function Game() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    // ENTER → submit
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // prevent new line
+      if (inputEnabled && userInput.trim() && !gameFinished) {
+        submitAnswer();
+      }
+    }
+
+    // Block copy / paste / cut shortcuts
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      ["c", "v", "x"].includes(e.key.toLowerCase())
+    ) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div
       className="game-container"
@@ -161,7 +179,12 @@ function Game() {
           value={userInput}
           disabled={!inputEnabled || gameFinished}
           onChange={(e) => setUserInput(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="..."
+          onCopy={(e) => e.preventDefault()}
+          onPaste={(e) => e.preventDefault()}
+          onCut={(e) => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}      
         />
         <button
           disabled={!inputEnabled || !userInput || gameFinished}
