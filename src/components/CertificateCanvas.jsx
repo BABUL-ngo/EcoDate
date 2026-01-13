@@ -33,12 +33,12 @@ function CertificateCanvas({ name, score, date, serial }) {
 
       /* ---------------- DATE ---------------- */
       ctx.font = "28px monospace";
-      ctx.fillText(date, 265, 802);
+      ctx.fillText(date, 280, 802);
 
       /* ---------------- SERIAL NUMBER ---------------- */
       ctx.textAlign = "right";
       ctx.font = "28px monospace";
-      ctx.fillText(serial, 399, 755);
+      ctx.fillText(serial, 350, 755);
     };
   }, [name, score, date, serial]);
 

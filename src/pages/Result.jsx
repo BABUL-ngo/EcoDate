@@ -17,7 +17,7 @@ function Result() {
   const name = location.state?.name ?? "Player";
 
   // GENERATED ONCE
-  const serial = `HAR-${new Date().getFullYear()}-${Math.floor(
+  const serial = `${new Date().getFullYear()}-${Math.floor(
     Math.random() * 100000
   )}`;
   const date = new Date().toLocaleDateString();
@@ -25,7 +25,7 @@ function Result() {
   const downloadCertificate = () => {
     const canvas = document.querySelector("canvas");
     const link = document.createElement("a");
-    link.download = `${name}-Harithavaran-Certificate.png`;
+    link.download = `${name}-EcoDate-Certificate.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
   };
