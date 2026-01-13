@@ -16,6 +16,13 @@ const backgrounds = {
 };
 
 function Game() {
+
+  useEffect(()=>{
+    if(!location.state){
+      navigate("/")
+    }
+  }, []);
+
   const navigate = useNavigate();
   const location = useLocation();
   const playerName = location.state?.name || "Player";

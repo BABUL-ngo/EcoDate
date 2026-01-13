@@ -1,6 +1,7 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { useEffect } from "react";
 
 function Result() {
   const location = useLocation();
@@ -20,6 +21,11 @@ function Result() {
     pdf.save(`${name}-Harithavaran-Certificate.pdf`);
   };
 
+  useEffect(()=>{
+    if(!location.state){
+      navigate("/")
+    }
+  }, []);
 return (
   <div
     style={{
