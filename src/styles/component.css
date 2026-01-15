@@ -1,0 +1,7 @@
+.tag{
+  position: fixed;
+  bottom: 4%;
+  left: 42%;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
