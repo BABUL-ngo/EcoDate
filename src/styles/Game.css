@@ -9,9 +9,7 @@
 body {
   margin: 0;
   background: #000;
-  /* overflow-y: auto; */
-  overflow-x: hidden;
-
+  overflow-y: auto;
 }
 
 /* ------------------ Game Container ------------------ */
@@ -37,8 +35,7 @@ body {
 /* ------------------ Story Panel ------------------ */
 .story-panel {
   flex: 1;                      /* fill remaining vertical space */
-  /* overflow-y: auto;              allow scrolling */
-  overflow-x: hidden;
+  overflow-y: auto;              /* allow scrolling */
   padding: 20px 30px;
   padding-bottom: 120px;         /* space for input panel */
   width: 100%;

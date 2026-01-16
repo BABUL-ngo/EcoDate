@@ -33,7 +33,7 @@ function CertificateCanvas({ name, score, date, serial }) {
 
       /* ---------------- DATE ---------------- */
       ctx.font = "28px monospace";
-      ctx.fillText(date, 280, 802);
+      ctx.fillText(date, 320, 802);
 
       /* ---------------- SERIAL NUMBER ---------------- */
       ctx.textAlign = "right";

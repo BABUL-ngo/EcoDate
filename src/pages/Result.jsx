@@ -20,7 +20,12 @@ function Result() {
   const serial = `${new Date().getFullYear()}-${Math.floor(
     Math.random() * 100000
   )}`;
-  const date = new Date().toLocaleDateString();
+  const date = new Date().toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
 
   const downloadCertificate = () => {
     const canvas = document.querySelector("canvas");
@@ -51,11 +56,11 @@ function Result() {
 
       {/* PNG CERTIFICATE */}
       <div
-        style={{
-          position: "absolute",
-          left: "-9999px",
-          top: 0,
-        }}
+        // style={{
+        //   position: "absolute",
+        //   left: "-9999px",
+        //   top: 0,
+        // }}
       >
         <CertificateCanvas
           name={name}
