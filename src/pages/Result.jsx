@@ -56,11 +56,11 @@ function Result() {
 
       {/* PNG CERTIFICATE */}
       <div
-        // style={{
-        //   position: "absolute",
-        //   left: "-9999px",
-        //   top: 0,
-        // }}
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: 0,
+        }}
       >
         <CertificateCanvas
           name={name}
